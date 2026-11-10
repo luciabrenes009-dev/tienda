@@ -67,7 +67,27 @@
             <div th:replace="~{consultas/fragmentos :: formConsulta('primary',#{consultas.derivadas},'/consultas/consultaDerivada')}"/>
             <div th:replace="~{consultas/fragmentos :: formConsulta('warning',#{consultas.jpql},'/consultas/consultaJPQL')}"/>
             <div th:replace="~{consultas/fragmentos :: formConsulta('success',#{consultas.sql},'/consultas/consultaSQL')}"/>
-            <div class='card'><p>Acá va su Práctica #2</p></div>
+            
+            <!-- Práctica #2: Consulta ampliada -->
+            <div class="col">
+                <div class="card p-2">
+                    <div class="card-header bg-info text-center text-white">
+                        <h5>Consulta Ampliada</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <p>Mostrar todos los productos inactivos de la tienda.</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a th:href="@{/consultas/productosInactivos}"
+                           class="btn btn-info text-white">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Consultar inactivos
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
         </section>
 
         <div th:fragment='formConsulta(colorForm, textoForm, urlForm)'>

@@ -57,5 +57,15 @@ public class ConsultaController {
         model.addAttribute("precioInf", precioInf);
         model.addAttribute("precioSup", precioSup);
         return "/consultas/listado";
+        
+    }
+        
+     //Consulta agg
+    @GetMapping("/productosInactivos")
+    public String productosInactivos(Model model) {
+        var productos = productoService.productosInactivos();
+        model.addAttribute("productos", productos);
+        return "/consultas/listado";
+
     }
 }

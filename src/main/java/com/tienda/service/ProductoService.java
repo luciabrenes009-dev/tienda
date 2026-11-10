@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+
 @Service
 public class ProductoService {
 
@@ -80,6 +81,13 @@ public class ProductoService {
     @Transactional(readOnly = true)
     public List<Producto> consultaSQL(BigDecimal precioInf, BigDecimal precioSup) {
         return productoRepository.consultaSQL(precioInf, precioSup);
+        
+    }
+        
+       // Consulta ampliada de los productos inactivos practica2
+    @Transactional(readOnly = true)
+    public List<Producto> productosInactivos() {
+        return productoRepository.productosInactivos();
     }
 
 }
